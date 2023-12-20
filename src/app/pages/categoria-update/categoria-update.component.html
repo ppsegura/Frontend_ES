@@ -1,0 +1,12 @@
+<div class="container mt-4">
+  <!-- Formulario para Actualizar Categoria -->
+  <h3 class="mt-4">Actualizar Categoria</h3>
+  <form (submit)="actualizarCategoria()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="categoria.nombre" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar Categoria</button>
+    <button class="btn btn-danger mx-2" (click)="cancelar()">Cancelar</button>
+  </form>
+</div>

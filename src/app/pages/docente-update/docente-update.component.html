@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h3>Actualizar Datos del Docente</h3>
+  <form (ngSubmit)="actualizarDocente()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="docente.nombre">
+    </div>
+    <div class="mb-3">
+      <label for="dni" class="form-label">DNI</label>
+      <input type="text" class="form-control" id="dni" name="dni" [(ngModel)]="docente.dni">
+    </div>
+    <div class="mb-3">
+      <label for="fechanac" class="form-label">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" id="fechanac" name="fechanac" [(ngModel)]="docente.fecha_nacimiento">
+    </div>
+    <div class="mb-3">
+      <label for="sueldo" class="form-label">Sueldo</label>
+      <input type="number" class="form-control" id="sueldo" name="sueldo" [(ngModel)]="docente.sueldo">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="docente.email">
+    </div>
+    <div class="mb-3">
+      <label for="sexo" class="form-label">Sexo</label>
+      <input type="text" class="form-control" id="sexo" name="sexo" [(ngModel)]="docente.sexo">
+    </div>
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categorias</label>
+      <select class="form-select" id="categoria" name="categoria" multiple [(ngModel)]="docente.categoria" required>
+        <option *ngFor="let cat of categoria" [ngValue]="cat">{{cat.nombre}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <button class="btn btn-danger mx-2" (click)="cancelar()">Cancelar</button>
+  </form>
+</div>

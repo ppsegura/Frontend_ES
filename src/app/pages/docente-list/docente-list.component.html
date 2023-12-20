@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h3>Crear un nuevo docente</h3>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-danger" (click)="regresar()">Regresar</button>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-4 mb-4" (click)="crearDocente()">Crear Docente</button>
+</div>
+<div class="container mt-4">
+  <h3>Listado de Docentes</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>DNI</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Sueldo</th>
+        <th>Email</th>
+        <th>Sexo</th>
+        <th>Categorias</th>
+        <th class="text-center">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of docente">
+        <td>{{doc.id_docente}}</td>
+        <td>{{doc.nombre}}</td>
+        <td>{{doc.dni}}</td>
+        <td>{{doc.fecha_nacimiento}}</td>
+        <td>{{doc.sueldo}}</td>
+        <td>{{doc.email}}</td>
+        <td>{{doc.sexo}}</td>
+        <td>
+          <ul class="list-unstyled">
+            <li *ngFor="let cat of doc.categoria">{{ cat.nombre }}</li>
+          </ul>
+        </td>
+        <td class="text-center">
+          <button (click)="editarDocente(doc.id_docente)" class="btn btn-primary me-2">Editar</button>
+          <button (click)="eliminarDocente(doc.id_docente)" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
